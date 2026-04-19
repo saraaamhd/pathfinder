@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Software Development | Pathfinder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS will be added in next step -->
+  <link rel="stylesheet" href="software-development-cube.css">
+   <link rel="stylesheet" href="components/navbar.css"
+</head>
+<body>
+<div clas="navbar-wrapper"
+<div id="navbar-container"></div>
+</div>
+  <!-- ===== PAGE TITLE OUTSIDE CUBE (optional, calm) ===== -->
+  <div class="page-wrapper">
+
+    <!-- ===== CUBE SCENE (3D SPACE) ===== -->
+    <div class="scene">
+
+      <!-- ===== THE CUBE ===== -->
+      <div class="cube">
+
+        <!-- FRONT FACE : TITLE (DEFAULT VIEW) -->
+        <div class="face front">
+          <h1>Software Development</h1>
+          <p>Turn ideas into real digital products people actually use.</p>
+        </div>
+
+        <!-- TOP FACE : CORE AREAS -->
+       <div class="face top">
+  <h2>Development Pathways</h2>
+  <ul>
+    <li>Web Development (Frontend, Backend, Full Stack)</li>
+    <li>Application Development (Mobile & Desktop)</li>
+    <li>Game Development (Interactive & Game Systems)</li>
+  </ul>
+</div>
+
+
+        <!-- LEFT FACE : WHAT IS SOFTWARE DEVELOPMENT -->
+        <div class="face left">
+          <h2>What is Software Development?</h2>
+          <p>
+            Software development is about creating digital solutions to real-world problems.
+            It involves building and improving applications such as websites, mobile apps,
+            and software systems people use every day.
+          </p>
+        </div>
+
+        <!-- RIGHT FACE : SKILLS & TECHNOLOGIES -->
+<div class="face right">
+  <h2>Skills & Technologies</h2>
+  <ul>
+    <li>Programming Languages (JavaScript, Python, others)</li>
+    <li>Web Technologies (HTML, CSS, frontend & backend frameworks)</li>
+    <li>Frameworks & Stacks (Node-based stacks, Django, MERN)</li>
+    <li>Tools & Version Control (Git, GitHub, development tools)</li>
+  </ul>
+</div>
+
+
+        <!-- BOTTOM FACE : WHO IS THIS FOR -->
+        <div class="face bottom">
+          <h2>Who Is This Domain For?</h2>
+          <p>
+            This domain is suitable for students who enjoy building things, solving problems,
+            and understanding how digital systems work behind the scenes.
+          </p>
+        </div>
+
+      </div>
+      <!-- ===== END CUBE ===== -->
+
+    </div>
+    <!-- ===== END SCENE ===== -->
+
+    <!-- ===== CONTROLS (NO LOGIC YET) ===== -->
+    <div class="cube-controls">
+      <button>What is this?</button>
+      <button>Core Areas</button>
+      <button>Skills</button>
+      <button>Who is this for?</button>
+      <button>Back to Domains</button>
+    </div>
+<div class="learn-more">
+  <a href="software-development-details.html">
+    Know More About Software Development
+  </a>
+</div>
+
+  </div>
+<script src="software-development-cube.js"></script>
+<script>
+async function loadNavbar() {
+  const response = await fetch("components/navbar.html");
+  const html = await response.text();
+  document.getElementById("navbar-container").innerHTML = html;
+}
+
+loadNavbar();
+</script>
+</body>
+</html>

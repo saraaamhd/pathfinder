@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Artificial Intelligence | Pathfinder</title>
+
+  <link rel="stylesheet" href="ai-details.css">
+  <link rel="stylesheet" href="components/navbar.css">
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar-wrapper">
+    <div id="navbar-container"></div>
+  </div>
+
+  <!-- PAGE TITLE -->
+  <h1 class="page-title">Artificial Intelligence (AI)</h1>
+
+  <!-- CARDS -->
+  <div class="card-grid">
+
+    <div class="card" onclick="openModal('what')">
+      <h3>What is Artificial Intelligence?</h3>
+      <p>Teaching machines to think and learn.</p>
+      <button>Learn More →</button>
+    </div>
+
+    <div class="card" onclick="openModal('roles')">
+      <h3>AI Roles</h3>
+      <p>AI Engineer, ML Engineer, Researcher.</p>
+      <button>Learn More →</button>
+    </div>
+
+    <div class="card" onclick="openModal('tools')">
+      <h3>Tools & Technologies</h3>
+      <p>Python, ML libraries, frameworks.</p>
+      <button>Learn More →</button>
+    </div>
+
+    <div class="card" onclick="openModal('salary')">
+      <h3>Salary & Compensation</h3>
+      <p>High-demand, high-pay field.</p>
+      <button>Learn More →</button>
+    </div>
+
+    <div class="card" onclick="openModal('companies')">
+      <h3>Top Hiring Companies</h3>
+      <p>AI-driven companies & labs.</p>
+      <button>Learn More →</button>
+    </div>
+
+    <div class="card" onclick="openModal('growth')">
+      <h3>Career Growth</h3>
+      <p>From engineer to AI architect.</p>
+      <button>Learn More →</button>
+    </div>
+
+  </div>
+
+  <!-- MODAL -->
+  <div id="modalOverlay" class="modal-overlay">
+
+    <div class="modal-box">
+
+      <span class="close-btn" onclick="closeModal()">×</span>
+
+      <div id="modalContent"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- PAGE SCRIPT -->
+  <script src="ai-details.js"></script>
+
+
+  <!-- NAVBAR LOADER -->
+  <script>
+
+    async function loadNavbar() {
+
+      const response = await fetch("components/navbar.html");
+
+      const html = await response.text();
+
+      document.getElementById("navbar-container").innerHTML = html;
+
+    }
+
+    loadNavbar();
+
+  </script>
+
+
+</body>
+</html>

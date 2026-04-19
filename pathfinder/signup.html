@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Create Account | Pathfinder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="signup.css" />
+</head>
+<body>
+
+  <div class="signup-page">
+    <div class="signup-card">
+      <h2>Create Account</h2>
+
+      <form id="signupForm">
+
+        <label>Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required />
+
+        <label>Age</label>
+        <input type="number" id="age" placeholder="Enter your age" required />
+
+        <label>Role</label>
+        <select id="role" required>
+          <option value="">Select role</option>
+          <option value="student">Student</option>
+          <option value="working">Working</option>
+          <option value="others">Others</option>
+        </select>
+
+        <div id="courseField" style="display:none;">
+          <label>Course</label>
+          <select id="course">
+            <option value="">Select course</option>
+            <option>Diploma in Computer Science</option>
+            <option>BTech in CSE</option>
+            <option>Bachelor of Computer Application</option>
+            <option>Diploma in ECE</option>
+            <option>BTech in ECE</option>
+            <option>Others</option>
+          </select>
+        </div>
+
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
+
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Create password" required />
+
+        <label>Security Question</label>
+        <input type="text" id="securityAnswer" placeholder="What was your first school?" required />
+
+        <button type="submit" class="signup-btn">Create Account</button>
+
+      </form>
+
+      <p class="login-text">
+        Already have an account?
+        <a href="login.html">Login</a>
+      </p>
+
+    </div>
+  </div>
+
+<script>
+const roleSelect = document.getElementById("role");
+const courseField = document.getElementById("courseField");
+
+roleSelect.addEventListener("change", function() {
+  if (this.value === "student") {
+    courseField.style.display = "block";
+  } else {
+    courseField.style.display = "none";
+  }
+});
+
+document.getElementById("signupForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const age = document.getElementById("age").value.trim();
+  const role = document.getElementById("role").value;
+  const course = document.getElementById("course").value;
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const securityAnswer = document.getElementById("securityAnswer").value.trim();
+
+  if (!name || !age || !role || !email || !password || !securityAnswer) {
+    alert("Please fill all required fields.");
+    return;
+  }
+
+  try {
+    const response = await fetch("http://localhost:5000/api/auth/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name,
+        age,
+        role,
+        course: role === "student" ? course : null,
+        email,
+        password,
+        securityAnswer
+      })
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      alert("Account created successfully. Please login.");
+      window.location.href = "login.html";
+    } else {
+      alert(data.message);
+    }
+
+  } catch (error) {
+    alert("Server error.");
+  }
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Career Analysis | Pathfinder</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="components/navbar.css">
+</head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6fb;
+  
+    }
+
+    .container {
+      margin-top: 120px;
+      width: 900px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      display: flex;
+      padding: 40px;
+      gap: 40px;
+    }
+
+    .left {
+      width: 45%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .right {
+      width: 55%;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    .highlight {
+      font-size: 22px;
+      font-weight: 600;
+      margin: 10px 0;
+      color: #34495e;
+    }
+
+    .secondary {
+      font-size: 16px;
+      color: #7f8c8d;
+      margin-bottom: 20px;
+    }
+
+    .explanation-box {
+      background: #f0f4ff;
+      padding: 20px;
+      border-radius: 14px;
+      line-height: 1.6;
+      font-size: 15px;
+      color: #333;
+    }
+
+  </style>
+</head>
+
+<body>
+<div class="navbar-wrapper">
+<div id="navbar-container"></div>
+</div>
+<div class="container">
+
+  <div class="left">
+    <canvas id="careerChart" width="300" height="300"></canvas>
+  </div>
+
+  <div class="right">
+    <h2>Your Career Insight</h2>
+
+    <div class="highlight" id="topDomain"></div>
+    <div class="secondary" id="secondDomain"></div>
+
+    <div class="explanation-box" id="explanationText"></div>
+    <!-- NEW BUTTON -->
+  <button class="next-btn" onclick="goToDemoTasks()">
+    Proceed to Demo Tasks
+  </button>
+  </div>
+
+</div>
+
+<script src="recommendation.js"></script>
+<script>
+
+/* LOAD NAVBAR */
+async function loadNavbar(){
+  const response = await fetch("components/navbar.html");
+  const data = await response.text();
+  document.getElementById("navbar-container").innerHTML = data;
+}
+
+loadNavbar();
+
+
+/* GO TO DEMO TASK PAGE */
+function goToDemoTasks(){
+  window.location.href = "demo-tasks.html";
+}
+
+</script>
+</body>
+</html>

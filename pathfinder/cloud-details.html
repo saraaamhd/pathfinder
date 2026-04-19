@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cloud Computing | Pathfinder</title>
+  <link rel="stylesheet" href="cloud-details.css" />
+  <link rel="stylesheet" href="components/navbar.css">
+</head>
+<body>
+  <div class="navbar-wrapper"
+<div id="navbar-container"></div>
+  <h1 class="page-title">Cloud Computing</h1>
+</div>
+  <!-- CARDS -->
+  <div class="card-grid">
+
+    <div class="card" onclick="openModal('what')">
+      <h3>What is Cloud Computing?</h3>
+      <p>Using computing resources over the internet.</p>
+      <button>Learn More →</button>
+    </div>
+
+    <div class="card" onclick="openModal('roles')">
+      <h3>Cloud Roles</h3>
+      <p>Engineer, Architect, DevOps.</p>
+      <button>Learn More →</button>
+    </div>
+
+    <div class="card" onclick="openModal('tools')">
+      <h3>Tools & Platforms</h3>
+      <p>AWS, Azure, Google Cloud.</p>
+      <button>Learn More →</button>
+    </div>
+
+    <div class="card" onclick="openModal('salary')">
+      <h3>Salary & Compensation</h3>
+      <p>Strong demand, global scope.</p>
+      <button>Learn More →</button>
+    </div>
+
+    <div class="card" onclick="openModal('companies')">
+      <h3>Top Hiring Companies</h3>
+      <p>Cloud-first organizations.</p>
+      <button>Learn More →</button>
+    </div>
+
+    <div class="card" onclick="openModal('growth')">
+      <h3>Career Growth</h3>
+      <p>From admin to cloud architect.</p>
+      <button>Learn More →</button>
+    </div>
+
+  </div>
+
+  <!-- MODAL -->
+  <div id="modalOverlay" class="modal-overlay">
+    <div class="modal-box">
+      <span class="close-btn" onclick="closeModal()">×</span>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="cloud-details.js"></script>
+  <script>
+async function loadNavbar() {
+  const response = await fetch("components/navbar.html");
+  const html = await response.text();
+  document.getElementById("navbar-container").innerHTML = html;
+}
+
+loadNavbar();
+</script>
+</body>
+</html>

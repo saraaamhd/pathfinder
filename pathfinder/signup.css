@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Full Page Background */
+.signup-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2f5d99, #bfdbfe); /* Same as login */
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px; /* Space top and bottom */
+}
+
+/* Card */
+.signup-card {
+  background: #ffffff;
+  width: 420px;
+  padding: 36px;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* Title */
+.signup-card h2 {
+  text-align: center;
+  color: #0a3d62;
+  margin-bottom: 28px;
+}
+
+/* Labels */
+.signup-card label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  display: block;
+  color: #333;
+}
+
+/* Inputs + Select */
+.signup-card input,
+.signup-card select {
+  width: 100%;
+  padding: 11px 12px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border 0.2s ease;
+}
+
+.signup-card input:focus,
+.signup-card select:focus {
+  outline: none;
+  border-color: #2f5d99;
+}
+
+/* Button */
+.signup-btn {
+  width: 100%;
+  padding: 13px;
+  background: #0a3d62;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s ease;
+}
+
+.signup-btn:hover {
+  background: #043152;
+  transform: translateY(-2px);
+}
+
+/* Bottom text */
+.login-text {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+.login-text a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}

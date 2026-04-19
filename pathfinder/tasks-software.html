@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Software Development Lab</title>
+
+<link rel="stylesheet" href="tasks-software.css">
+
+</head>
+
+<body>
+
+
+<!-- ================= MODAL ================= -->
+
+<div id="introModal" class="modal">
+
+<div class="modal-box">
+
+<h2>🚀 Developer Mission</h2>
+
+<p>
+You are now a <b>Junior Software Developer</b>.
+
+Your task is to build a <b>Create Account page</b>
+using HTML, CSS and JavaScript.
+
+Complete this mission to understand how
+frontend interfaces are built.
+</p>
+
+<h3>Select Difficulty</h3>
+
+<div class="difficulty-buttons">
+
+<button id="beginnerBtn">Beginner</button>
+<button id="intermediateBtn">Intermediate</button>
+<button id="advancedBtn">Advanced</button>
+
+</div>
+
+</div>
+</div>
+
+
+
+<!-- ================= LAB ================= -->
+
+<div class="lab">
+
+
+<!-- ===== LEFT PANEL ===== -->
+
+<div class="left">
+
+<h2>Mission Panel</h2>
+
+<div id="requirements"></div>
+
+<div id="instructions"></div>
+
+<div class="navButtons">
+
+<button id="prevBtn">Previous</button>
+<button id="nextBtn">Next</button>
+
+</div>
+
+</div>
+
+
+
+<!-- ===== CENTER PANEL ===== -->
+
+<div class="center">
+
+<div class="tabs">
+
+<button class="tab active" data-tab="html">HTML</button>
+<button class="tab" data-tab="css">CSS</button>
+<button class="tab" data-tab="js">JS</button>
+
+</div>
+
+
+<textarea id="htmlEditor" class="editor active">
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Create Account</title>
+</head>
+
+<body>
+
+<!-- Type code here -->
+
+</body>
+</html>
+
+</textarea>
+
+
+<textarea id="cssEditor" class="editor"></textarea>
+
+<textarea id="jsEditor" class="editor"></textarea>
+
+
+<div class="editorButtons">
+
+<button id="runCode">Run ▶</button>
+
+<button id="solutionBtn">View Full Solution</button>
+
+</div>
+
+<div id="status"></div>
+
+</div>
+
+
+
+<!-- ===== RIGHT PANEL ===== -->
+
+<div class="right">
+
+<h2>Preview</h2>
+
+<iframe id="preview"></iframe>
+
+</div>
+
+
+</div>
+
+
+
+<!-- ===== SOLUTION POPUP ===== -->
+
+<div id="solutionModal" class="solutionModal">
+
+<div class="solutionBox">
+
+<span id="closeSolution">✖</span>
+
+<pre id="solutionCode"></pre>
+
+</div>
+
+</div>
+
+
+
+
+
+
+<div id="hintModal" class="hint-modal">
+
+<div class="hint-box">
+
+<span id="closeHint">✖</span>
+
+<h3>Hints</h3>
+
+<p id="hintText"></p>
+
+</div>
+
+</div>
+<script src="tasks-software.js"></script>
+</body>
+</html>

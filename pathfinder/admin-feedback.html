@@ -1,0 +1,98 @@
+<!DOCTYPE html><html>
+<head><title>User Feedback | Admin</title><style>
+
+body{
+font-family:Arial;
+background:#f4f6fb;
+padding:40px;
+}
+
+h1{
+text-align:center;
+margin-bottom:40px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+th,td{
+padding:12px;
+border-bottom:1px solid #ddd;
+text-align:left;
+}
+
+th{
+background:#3b82f6;
+color:white;
+}
+
+tr:hover{
+background:#f1f5f9;
+}
+
+.back-btn{
+margin-bottom:20px;
+padding:8px 15px;
+border:none;
+background:#111827;
+color:white;
+cursor:pointer;
+border-radius:5px;
+}
+
+</style></head><body><button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+<h1>User Feedback</h1><table><thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Feedback</th>
+<th>Rating</th>
+<th>Date</th>
+</tr>
+</thead><tbody id="feedbackTable"></tbody></table><script>
+
+function goBack(){
+  window.location="admin-dashboard.html"
+}
+
+async function loadFeedback(){
+
+  try{
+
+    const res = await fetch("http://localhost:5000/api/feedback/all")
+    const data = await res.json()
+
+    const table = document.getElementById("feedbackTable")
+    table.innerHTML=""
+
+    data.forEach(f=>{
+
+      table.innerHTML += `
+      <tr>
+        <td>${f.user ? f.user.name : "Anonymous"}</td>
+        <td>${f.user ? f.user.email : "-"}</td>
+        <td>${f.comment || "-"}</td>
+        <td>${f.rating || "-"}</td>
+        <td>${new Date(f.createdAt).toLocaleDateString()}</td>
+      </tr>
+      `
+
+    })
+
+  }catch(err){
+
+    console.log("Error loading feedback",err)
+
+  }
+
+}
+
+loadFeedback()
+
+</script></body>
+</html>

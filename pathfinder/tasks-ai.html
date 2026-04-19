@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>AI Model Training Lab</title>
+
+<link rel="stylesheet" href="tasks-ai.css">
+
+</head>
+
+<body>
+
+<header>
+AI Model Training Lab
+</header>
+
+<div class="mode">
+
+<button onclick="setMode('beginner')">Beginner</button>
+<button onclick="setMode('intermediate')">Intermediate</button>
+<button onclick="setMode('advanced')">Advanced</button>
+
+</div>
+
+<div class="container">
+
+<div class="panel">
+
+<h3>Mission Panel</h3>
+
+<p id="instructions">
+Select a mode to begin the AI workflow.
+</p>
+
+</div>
+
+
+<div class="panel">
+
+<h3>Dataset Explorer</h3>
+
+<button onclick="loadDataset()">Load Dataset</button>
+
+<table id="dataset"></table>
+
+</div>
+
+
+<div class="panel">
+
+<h3> ML Model Builder</h3>
+
+<label>Select Algorithm</label>
+
+<select id="algorithm" onchange="updateAlgorithmInfo()">
+
+<option>Logistic Regression</option>
+<option>Decision Tree</option>
+<option>Random Forest</option>
+<option>Neural Network</option>
+
+</select>
+<div id="algorithmInfo" class="algoInfo">
+Select an algorithm to see explanation.
+</div>
+<br><br>
+
+<button onclick="trainModel()">Train Model</button>
+
+<div class="console" id="console"></div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+<div class="panel">
+
+<h3>Prediction</h3>
+
+Age <input id="age"><br>
+BMI <input id="bmi"><br>
+Glucose <input id="glucose"><br>
+Blood Pressure <input id="bp"><br>
+
+<button onclick="predict()">Predict Risk</button>
+
+<h2 id="prediction"></h2>
+
+</div>
+
+
+<div class="panel">
+
+<h3>Training Accuracy Graph</h3>
+
+<canvas id="accuracyChart"></canvas>
+
+</div>
+
+
+<div class="panel">
+
+<h3>Feature Importance</h3>
+
+<canvas id="featureChart"></canvas>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+<div class="panel">
+
+<h3>Confusion Matrix</h3>
+
+<table id="confusionMatrix"></table>
+
+</div>
+
+
+<div class="panel">
+
+<h3>Neural Network Visualization</h3>
+
+<canvas id="nnCanvas"></canvas>
+
+</div>
+
+
+<div class="panel">
+
+<h3>Model Output</h3>
+
+<p>
+This lab demonstrates how AI models are trained, evaluated, and used for predictions.
+</p>
+
+</div>
+
+</div>
+
+<script src="tasks-ai.js"></script>
+
+</body>
+</html>

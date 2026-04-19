@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>IoT Temperature Lab</title>
+<link rel="stylesheet" href="tasks-iot.css">
+
+</head>
+
+<body>
+
+<!-- Difficulty Modal -->
+
+<div id="difficultyModal" class="modal">
+
+<div class="modal-box">
+
+<h2>IoT Mission</h2>
+
+<p>
+You are a <b>Junior IoT Engineer</b>.
+<br><br>
+Build a smart temperature cooling system.
+</p>
+
+<button id="beginnerBtn">Beginner</button>
+<button id="intermediateBtn">Intermediate</button>
+<button id="advancedBtn">Advanced</button>
+
+</div>
+</div>
+
+
+<h1>Smart Temperature Controller</h1>
+
+
+<!-- Instructions -->
+
+<div id="instructions"></div>
+
+<div id="navButtons">
+<button id="prevBtn">Previous</button>
+<button id="nextBtn">Next</button>
+</div>
+
+<div id="hintArea"></div>
+
+
+<!-- Builder -->
+
+<div class="builder">
+
+<div class="components">
+
+<h3>Devices</h3>
+
+<div draggable="true" class="device" id="power">Power Supply</div>
+<div draggable="true" class="device" id="sensor">Temperature Sensor</div>
+<div draggable="true" class="device" id="fan">Cooling Fan</div>
+
+</div>
+
+
+<div class="board">
+
+<h3>Microcontroller</h3>
+
+<div class="pin" data-pin="vcc">VCC</div>
+<div class="pin" data-pin="gnd">GND</div>
+<div class="pin" data-pin="gpio4">GPIO4</div>
+<div class="pin" data-pin="gpio27">GPIO27</div>
+
+</div>
+
+</div>
+
+
+<!-- Device Status -->
+
+<div class="status">
+
+<p id="powerStatus">Power : 🔴</p>
+<p id="sensorStatus">Sensor : 🔴</p>
+<p id="fanStatus">Fan : 🔴</p>
+
+</div>
+
+
+<!-- System Log -->
+
+<pre id="log">System idle...</pre>
+
+
+<button id="runTest">Run System</button>
+
+
+<div id="fanIcon">🌀</div>
+
+
+<script src="tasks-iot.js"></script>
+
+</body>
+</html>

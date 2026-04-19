@@ -1,0 +1,126 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Background – Same vibe as aptitude */
+.profile-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* Glass Card */
+.profile-card {
+  width: 100%;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  animation: floatCard 6s ease-in-out infinite;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+/* Floating effect */
+@keyframes floatCard {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Titles */
+.profile-card h2 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.subtitle {
+  text-align: center;
+  color: #cbd5e1;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+/* Section headings */
+.profile-card h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #93c5fd;
+  font-weight: 600;
+}
+
+/* Field layout */
+.field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.field label {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+/* Dropdown styling */
+.field select {
+  width: 180px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.field select:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.field select option {
+  color: #000000;
+}
+
+/* Button */
+.save-btn {
+  margin-top: 35px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.save-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(96, 165, 250, 0.6);
+}
+
+/* Scrollbar Styling */
+.profile-card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.profile-card::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 10px;
+}

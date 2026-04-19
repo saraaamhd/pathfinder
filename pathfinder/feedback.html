@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Feedback | Pathfinder</title>
+
+<!-- CSS LINK -->
+<link rel="stylesheet" href="feedback.css">
+
+</head>
+
+<body>
+
+<div class="feedback-container">
+
+<h2>Give Feedback</h2>
+
+<label for="rating">Rating</label>
+
+<select id="rating">
+
+<option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+<option value="4">⭐⭐⭐⭐ Good</option>
+<option value="3">⭐⭐⭐ Average</option>
+<option value="2">⭐⭐ Poor</option>
+<option value="1">⭐ Bad</option>
+
+</select>
+
+<label for="comment">Comment</label>
+
+<textarea id="comment" placeholder="Write your feedback here..."></textarea>
+
+<button onclick="submitFeedback()">Submit Feedback</button>
+
+<p id="msg"></p>
+
+</div>
+
+<script>
+async function submitFeedback(){
+
+  const rating = document.getElementById("rating").value;
+  const comment = document.getElementById("comment").value;
+
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  const response = await fetch("http://localhost:5000/api/feedback/submit", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      userId: user._id,
+      rating,
+      comment
+    })
+  });
+
+  const data = await response.json();
+
+  alert(data.message);
+}
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Data Analytics Lab</title>
+<link rel="stylesheet" href="tasks-data.css">
+</head>
+
+<body>
+
+<h1>Data Analytics Lab</h1>
+
+<div class="mode">
+<button onclick="setMode('beginner')">Beginner</button>
+<button onclick="setMode('intermediate')">Intermediate</button>
+<button onclick="setMode('advanced')">Advanced</button>
+</div>
+
+<div class="container">
+
+<div class="panel">
+
+<h3>Mission Panel</h3>
+
+<p id="instructions">
+Select a mode to begin analysis.
+</p>
+
+<button id="hintBtn" onclick="showHint()">Hint</button>
+
+</div>
+
+<div class="panel">
+
+<h3>Dataset</h3>
+
+<button onclick="loadDataset()">Load Sales Dataset</button>
+
+<table id="dataset"></table>
+
+</div>
+
+<div class="panel">
+
+<h3>Calculation Workspace</h3>
+
+Highest Sales Value  
+<input id="maxSales"><br><br>
+
+Best Selling Product  
+<input id="bestProduct"><br><br>
+
+Average Profit  
+<input id="avgProfit"><br><br>
+
+Most Frequent Region  
+<input id="bestRegion"><br><br>
+
+<button onclick="checkAnswers()">Check Answers</button>
+
+<h3 id="result"></h3>
+
+</div>
+
+</div>
+
+<div class="container">
+
+<div class="panel">
+
+<h3>Sales Visualization</h3>
+
+<canvas id="chart"></canvas>
+
+</div>
+
+</div>
+
+<div id="hintBox" class="hint-box">
+
+<h3>Hint</h3>
+
+<p>
+Look at the dataset carefully.
+
+• Highest Sales → find the largest value in the Sales column  
+• Average Profit → add all profits and divide by number of rows  
+• Region frequency → check which region appears most
+</p>
+
+<button onclick="closeHint()">Close</button>
+
+</div>
+
+
+
+<script src="tasks-data.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #0a3d62;
+  overflow: hidden;
+}
+
+/* WORLD */
+.world {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(#0a3d62, #08304d);
+}
+
+/* PLAYER */
+.player {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+}
+
+/* ZONES */
+.zone {
+  position: absolute;
+  background: rgba(255,255,255,0.15);
+  padding: 12px;
+  border-radius: 14px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.zone:hover {
+  transform: scale(1.1);
+  background: rgba(255,255,255,0.3);
+}
+
+.zone span {
+  display: block;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* POSITIONING ZONES */
+.tool-hut { top: 20%; left: 20%; }
+.code-cave { top: 15%; right: 20%; }
+.build-zone { top: 45%; left: 15%; }
+.growth-path { bottom: 30%; right: 15%; }
+.company-city { bottom: 15%; left: 40%; }
+
+/* OVERLAY */
+.room-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.room-overlay.hidden {
+  display: none;
+}
+
+.room-content {
+  background: #ffffff;
+  width: 80%;
+  height: 80%;
+  border-radius: 20px;
+  padding: 30px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}

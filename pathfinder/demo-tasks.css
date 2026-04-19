@@ -1,0 +1,49 @@
+/* Page background */
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0f172a;
+    color:white;
+    text-align:center;
+}
+
+/* Title */
+h1{
+    margin-top:40px;
+    font-size:32px;
+}
+
+/* Container holding all domain cards */
+.domains-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    max-width:900px;
+    margin:60px auto;
+}
+
+/* Individual domain card */
+.domain-card{
+    background:#1e293b;
+    padding:40px;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:all 0.3s ease;
+}
+
+/* Hover effect */
+.domain-card:hover{
+    background:#2563eb;
+    transform:translateY(-5px);
+}
+
+/* Responsive for smaller screens */
+@media (max-width:768px){
+    .domains-container{
+        grid-template-columns:1fr;
+        width:80%;
+    }
+}

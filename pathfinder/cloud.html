@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Software Development | Pathfinder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS will be added in next step -->
+  <link rel="stylesheet" href="cloud.css">
+  <link rel="stylesheet" href="components/navbar.css"
+</head>
+<body>
+  <div clas="navbar-wrapper"
+<div id="navbar-container"></div>
+</div>
+  <!-- ===== PAGE TITLE OUTSIDE CUBE (optional, calm) ===== -->
+  <div class="page-wrapper">
+
+    <!-- ===== CUBE SCENE (3D SPACE) ===== -->
+    <div class="scene">
+
+      <!-- ===== THE CUBE ===== -->
+      <div class="cube">
+
+        <!-- FRONT FACE : TITLE (DEFAULT VIEW) -->
+        <div class="face front">
+          <h1>Cloud Computing</h1>
+          <p>Build, deploy, and scale applications on the cloud</p>
+        </div>
+
+        <!-- TOP FACE : CORE AREAS -->
+       <div class="face top">
+  <h2>core areas</h2>
+  <ul>
+    <li>Cloud Infrastructure</li>
+    <li>Virtualization</li>
+    <li>Cloud Storage</li>
+    <li>DevOps & Deployment</li>
+    <li>Cloud Security</li>
+  </ul>
+</div>
+
+
+        <!-- LEFT FACE : WHAT IS SOFTWARE DEVELOPMENT -->
+        <div class="face left">
+          <h2>WHAT IS CLOUD COMPUTING</h2>
+          <p>
+           Cloud Computing focuses on delivering computing resources such as servers,
+storage, and applications over the internet, allowing systems to scale
+efficiently without managing physical hardware.
+          </p>
+        </div>
+
+        <!-- RIGHT FACE : SKILLS & TECHNOLOGIES -->
+<div class="face right">
+  <h2>Skills & Technologies</h2>
+  <ul>
+    <li>Cloud platforms (AWS, Azure, GCP – basics)</li>
+    <li>Linux fundamentals</li>
+    <li>Networking concepts</li>
+    <li>Virtual machines & containers</li>
+    <li>Deployment and monitoring basics</li>
+  </ul>
+</div>
+
+
+        <!-- BOTTOM FACE : WHO IS THIS FOR -->
+        <div class="face bottom">
+          <h2>Who Is This Domain For?</h2>
+         <p>
+  Students interested in infrastructure and systems <br>
+  Learners curious about large-scale applications <br>
+  Those who enjoy deployment and optimization <br>
+  People excited about modern cloud technologies
+</p>
+
+        </div>
+
+      </div>
+      <!-- ===== END CUBE ===== -->
+
+    </div>
+    <!-- ===== END SCENE ===== -->
+
+    <!-- ===== CONTROLS (NO LOGIC YET) ===== -->
+    <div class="cube-controls">
+      <button>What is this?</button>
+      <button>Core Areas</button>
+      <button>Skills</button>
+      <button>Who is this for?</button>
+      <button>Back to Domains</button>
+    </div>
+<div class="learn-more">
+  <a href="cloud-details.html">
+    Know More About Cloud
+  </a>
+</div>
+
+  </div>
+<script src="cloud.js"></script>
+<script>
+async function loadNavbar() {
+  const response = await fetch("components/navbar.html");
+  const html = await response.text();
+  document.getElementById("navbar-container").innerHTML = html;
+}
+
+loadNavbar();
+</script>
+</body>
+</html>

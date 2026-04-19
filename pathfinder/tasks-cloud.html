@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cloud Deployment Lab | Pathfinder</title>
+<link rel="stylesheet" href="tasks-cloud.css">
+</head>
+
+<body>
+
+<!-- DIFFICULTY MODAL -->
+
+<div id="difficultyModal" class="modal">
+<div class="modal-box">
+
+<h2>☁ Cloud Deployment Mission</h2>
+
+<p>
+You are now a <b>Junior Cloud Engineer</b>.
+Your task is to deploy a simple web application
+using cloud infrastructure similar to AWS.
+</p>
+
+<h3>Select Difficulty</h3>
+
+<button id="beginnerBtn">Beginner</button>
+<button id="intermediateBtn">Intermediate</button>
+<button id="advancedBtn">Advanced</button>
+
+</div>
+</div>
+
+<!-- MAIN DASHBOARD -->
+
+<div class="dashboard">
+
+<!-- LEFT PANEL -->
+
+<div class="panel mission">
+
+<h3>Mission Panel</h3>
+
+<div id="instructions">
+Select a difficulty to start the mission.
+</div>
+
+<div id="navButtons">
+<button id="prevStep">Previous</button>
+<button id="nextStep">Next</button>
+</div>
+
+<div id="hintArea"></div>
+
+</div>
+
+
+<!-- CENTER PANEL -->
+
+<div class="panel console">
+
+<h3>Cloud CLI</h3>
+
+<div class="terminal-window">
+
+<pre id="terminalOutput">
+$ aws console ready
+</pre>
+
+<input id="commandInput" placeholder="Type command here">
+
+<button onclick="runCommand()">Run</button>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT PANEL -->
+
+<div class="panel status">
+
+<h3>Infrastructure Status</h3>
+
+<ul>
+<li>Region: us-east-1</li>
+<li id="vmStatus">EC2 Instance: ❌ Not Running</li>
+<li id="firewallStatus">Security Group: ❌ Port 80 Closed</li>
+<li id="appStatus">Application: ❌ Not Deployed</li>
+</ul>
+
+</div>
+
+</div>
+
+<script src="tasks-cloud.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Data & Analytics | Pathfinder</title>
+  <link rel="stylesheet" href="data-analytics-details.css" />
+   <link rel="stylesheet" href="components/navbar.css"
+</head>
+<body>
+<div clas="navbar-wrapper"
+<div id="navbar-container"></div>
+</div>
+  <h1 class="page-title">Data & Analytics</h1>
+
+  <!-- CARDS -->
+  <div class="card-grid">
+
+    <div class="card" onclick="openModal('what')">
+      <h3>What is Data & Analytics?</h3>
+      <p>Turning raw data into useful insights.</p>
+      <button>Learn More →</button>
+    </div>
+
+    <div class="card" onclick="openModal('roles')">
+      <h3>Analytics Roles</h3>
+      <p>Analyst, BI roles, reporting.</p>
+      <button>Learn More →</button>
+    </div>
+
+    <div class="card" onclick="openModal('tools')">
+      <h3>Tools & Technologies</h3>
+      <p>SQL, Excel, Python, BI tools.</p>
+      <button>Learn More →</button>
+    </div>
+
+    <div class="card" onclick="openModal('salary')">
+      <h3>Salary & Compensation</h3>
+      <p>Pay scale & demand.</p>
+      <button>Learn More →</button>
+    </div>
+
+    <div class="card" onclick="openModal('companies')">
+      <h3>Top Hiring Companies</h3>
+      <p>Data-driven organizations.</p>
+      <button>Learn More →</button>
+    </div>
+
+    <div class="card" onclick="openModal('growth')">
+      <h3>Career Growth</h3>
+      <p>From analyst to decision-maker.</p>
+      <button>Learn More →</button>
+    </div>
+
+  </div>
+
+  <!-- MODAL -->
+  <div id="modalOverlay" class="modal-overlay">
+    <div class="modal-box">
+      <span class="close-btn" onclick="closeModal()">×</span>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="data-analytics-details.js"></script>
+  <script>
+async function loadNavbar() {
+  const response = await fetch("components/navbar.html");
+  const html = await response.text();
+  document.getElementById("navbar-container").innerHTML = html;
+}
+
+loadNavbar();
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Software Development | Pathfinder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS will be added in next step -->
+  <link rel="stylesheet" href="data-analytics.css">
+   <link rel="stylesheet" href="components/navbar.css"
+</head>
+<body>
+<div clas="navbar-wrapper"
+<div id="navbar-container"></div>
+</div>
+  <!-- ===== PAGE TITLE OUTSIDE CUBE (optional, calm) ===== -->
+  <div class="page-wrapper">
+
+    <!-- ===== CUBE SCENE (3D SPACE) ===== -->
+    <div class="scene">
+
+      <!-- ===== THE CUBE ===== -->
+      <div class="cube">
+
+        <!-- FRONT FACE : TITLE (DEFAULT VIEW) -->
+        <div class="face front">
+          <h1>Data & Analytics</h1>
+          <p>Transform data into insights that drive decisions</p>
+        </div>
+
+        <!-- TOP FACE : CORE AREAS -->
+       <div class="face top">
+  <h2>core areas</h2>
+  <ul>
+    <li>Data Analysis</li>
+    <li>Business Analytics</li>
+    <li>Data Visualization</li>
+    <li>Reporting and Dashboards</li>
+    <li>Decision support</li>
+  </ul>
+</div>
+
+
+        <!-- LEFT FACE : WHAT IS SOFTWARE DEVELOPMENT -->
+        <div class="face left">
+          <h2>WHAT IS DATA & ANALYTICS</h2>
+          <p>Data & Analytics focuses on collecting, processing, and interpreting data to uncover insights.
+It helps organizations understand trends, measure performance, and make informed decisions.
+        </p>
+        </div>
+
+        <!-- RIGHT FACE : SKILLS & TECHNOLOGIES -->
+<div class="face right">
+  <h2>Skills & Technologies</h2>
+  <ul>
+    <li>Excel and Spreadsheets</li>
+    <li>SQL</li>
+    <li>Python</li>
+    <li>Data visualization tools</li>
+    <li>Understanding data patterns</li>
+  </ul>
+</div>
+
+
+        <!-- BOTTOM FACE : WHO IS THIS FOR -->
+        <div class="face bottom">
+          <h2>Who Is This Domain For?</h2>
+ <p>
+  Students who enjoy working with data <br>
+  People interested in business insights <br>
+  Logical thinkers who like patterns <br>
+  Those curious about decision-making
+</p>
+
+
+        </div>
+
+      </div>
+      <!-- ===== END CUBE ===== -->
+
+    </div>
+    <!-- ===== END SCENE ===== -->
+
+    <!-- ===== CONTROLS (NO LOGIC YET) ===== -->
+    <div class="cube-controls">
+      <button>What is this?</button>
+      <button>Core Areas</button>
+      <button>Skills</button>
+      <button>Who is this for?</button>
+      <button>Back to Domains</button>
+    </div>
+<div class="learn-more">
+  <a href="data-analytics-details.html">
+    Know More About Data and Analyics
+  </a>
+</div>
+
+  </div>
+<script src="data-analytics.js"></script>
+<script>
+async function loadNavbar() {
+  const response = await fetch("components/navbar.html");
+  const html = await response.text();
+  document.getElementById("navbar-container").innerHTML = html;
+}
+
+loadNavbar();
+</script>
+</body>
+</html>

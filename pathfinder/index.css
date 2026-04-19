@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+/* FULL SCREEN BACKGROUND */
+.landing {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("undex.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+}
+
+/* CENTER CONTENT */
+.content {
+  text-align: left;
+  margin-left: 120px;
+  color: #eaf6ff; /* soft light tone for dark blue background */
+}
+
+/* LOGO */
+.logo {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+/* MAIN TITLE */
+.title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+/* TAGLINE */
+.tagline {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+  color: #cfe9ff;
+}
+
+/* BUTTON */
+.cta-btn {
+  padding: 15px 45px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #4fc3f7, #81d4fa);
+  color: #0a2540;
+
+  box-shadow: 0 10px 30px rgba(79, 195, 247, 0.4);
+  transition: all 0.3s ease;
+}
+
+/* BUTTON HOVER */
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(79, 195, 247, 0.6);
+}

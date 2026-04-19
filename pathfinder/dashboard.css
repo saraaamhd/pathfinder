@@ -1,0 +1,257 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* FULL SCREEN BACKGROUND */
+.dashboard-bg {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("interface2.png");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+/* ZONE 1 : TOP NAV BAR */
+.top-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 72px; /* thin white strip */
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 40px;
+}
+
+/* BRAND BLOCK */
+.brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo {
+  font-size: 20px;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0a3d62; /* dark blue */
+}
+
+.brand-sub {
+  font-size: 11px;
+  color: #000;
+  margin-left: 28px; /* aligns under Pathfinder text */
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 24px;
+  white-space: nowrap; /* CRITICAL: prevents wrapping */
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #000;
+  padding-bottom: 4px;
+  position: relative;
+}
+
+/* ACTIVE STATE */
+.nav-links a.active {
+  color: #0a3d62;
+  font-weight: 600;
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #0a3d62;
+}
+
+
+
+/* ZONE 2 : HERO TEXT (WHITE AREA) */
+.zone2 {
+  position: absolute;
+
+  /* These values are tuned for laptop screens */
+  top: 120px;          /* below Zone 1 nav bar */
+  left: 0;
+
+  width: 100%;
+  height: 45%;         /* stays within white illustration area */
+
+  display: flex;
+  align-items: center;
+}
+
+.zone2-text {
+  max-width: 520px;    /* prevents text reaching illustration */
+  margin-left: 80px;  /* keeps text safely on left */
+
+}
+
+.zone2-text h2 {
+  font-size: 36px;     /* big but not overpowering */
+  font-weight: 700;
+  color: #0a3d62;      /* dark blue */
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.zone2-text p {
+  font-size: 15px;
+  color: #444;         /* soft black / gray */
+  font-weight: 400;
+}
+/* ZONE 2 : HERO TEXT (WHITE AREA) */
+.zone2 {
+  position: absolute;
+
+  /* These values are tuned for laptop screens */
+  top: 80px;          /* below Zone 1 nav bar */
+  left: 0;
+
+  width: 100%;
+  height: 45%;         /* stays within white illustration area */
+
+  display: flex;
+  align-items: center;
+}
+
+.zone2-text {
+  max-width: 520px;    /* prevents text reaching illustration */
+  margin-left: 80px;  /* keeps text safely on left */
+
+}
+
+.zone2-text h2 {
+  font-size: 36px;     /* big but not overpowering */
+  font-weight: 700;
+  color: #0a3d62;      /* dark blue */
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.zone2-text p {
+  font-size: 15px;
+  color: #444;         /* soft black / gray */
+  font-weight: 400;
+}
+
+
+
+
+
+/* ZONE 3 : DARK BLUE AREA */
+.zone3 {
+  position: absolute;
+
+  /* Positioned inside dark blue area */
+  bottom: 40px;
+  left: 0;
+
+  width: 100%;
+  padding: 0 60px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* CLICKABLE BOXES */
+.zone3-card {
+  flex: 1;
+
+  background: rgba(255, 255, 255, 0.12); /* subtle contrast on dark blue */
+  border-radius: 12px;
+
+  padding: 36px 14px;
+  text-decoration: none;
+
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+/* TITLE */
+.zone3-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff; /* clean contrast */
+  margin-bottom: 6px;
+}
+
+/* DESCRIPTION */
+.zone3-card p {
+  font-size: 13px;
+  color: #dbeafe; /* soft light blue */
+  font-weight: 400;
+}
+
+/* HOVER EFFECT (SUBTLE, PROFESSIONAL) */
+.zone3-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+
+.user-name {
+  font-weight: 600;
+  margin-right: 12px;
+  color: #0a3d62;
+}
+
+.logout-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.logout-link:hover {
+  text-decoration: underline;
+}
+
+
+
+.login-warning {
+  display: none;
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 10px 16px;
+  border-radius: 8px;
+  margin: 12px auto;
+  width: fit-content;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+

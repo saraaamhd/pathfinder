@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+/* ===== ZONE 1 : TOP (WHITE) ===== */
+.zone-top {
+  height: 40vh;
+  background: hsl(0, 11%, 98%);
+  padding: 60px 80px;
+}
+
+.zone-top h1 {
+  font-size: 32px;
+  color: #111f62;
+  text-align: center;
+}
+
+.zone-top p {
+  margin-top: 8px;
+  font-size: 15px;
+  color: #555;
+  text-align: center;
+}
+
+/* ===== ZONE 2 : BOTTOM (BLUE) ===== */
+.zone-bottom {
+  height: 60vh;
+  background: linear-gradient(135deg, #161536, #0b1f2d);
+
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== CAROUSEL CONTAINER ===== */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -120px;
+}
+
+/* ===== CARD BASE ===== */
+.card {
+  position: absolute;
+  width: 240px;
+  height: 280px;
+ background: hsl(60, 20%, 98%);
+
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+/* ===== CARD CONTENT ===== */
+.card .icon {
+  font-size: 50px;
+  margin-bottom: 14px;
+}
+
+.card .label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0a3d62;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.card.active {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+  z-index: 3;
+}
+
+.card.left {
+  transform: translateX(-180px) scale(0.9);
+  opacity: 0.8;
+  z-index: 2;
+}
+
+.card.right {
+  transform: translateX(180px) scale(0.9);
+  opacity: 0.8;
+  z-index: 2;
+}
+
+.card.far-left {
+  transform: translateX(-340px) scale(0.8);
+  opacity: 0.5;
+}
+
+.card.far-right {
+  transform: translateX(340px) scale(0.8);
+  opacity: 0.5;
+}
+
+
+
+
+/* ===== ARROWS ===== */
+.carousel-controls {
+  margin-top: 20px;
+}
+
+.carousel-controls button {
+  background: #eff5f2;
+  border: none;
+  padding: 10px 18px;
+  font-size: 18px;
+  border-radius: 50%;
+  margin: 0 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+
+.card:not(.active):not(.left):not(.right):not(.far-left):not(.far-right) {
+  opacity: 0.4;
+  transform: scale(0.75);
+  z-index: 0;
+}
+
+
+/* ===== EXTRA BACK CARD (6th card) ===== */
+.card.back {
+  transform: scale(0.65);
+  opacity: 0.3;
+  z-index: 0;
+}
+
+
+/* ===== DOT INDICATORS ===== */
+.carousel-dots {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  justify-content: center;
+}
+
+.carousel-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dots .dot.active {
+  background: #dfdbb7;
+  transform: scale(1.3);
+}
+
+
+
+
+
+
+
+/* ===== DOMAIN DETAIL SECTIONS ===== */
+
+.detail-section {
+  padding: 60px;
+  background: #f5f9ff;
+}
+
+.detail-section h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.section-intro {
+  text-align: center;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+/* EACH DETAIL BLOCK */
+.detail-block {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+/* IMAGE */
+.detail-block img {
+  width: 180px;
+  height: auto;
+}
+
+/* TEXT */
+.detail-block h3 {
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.detail-block p {
+  color: #444;
+  line-height: 1.6;
+}
+
+/* ALTERNATE LEFT-RIGHT */
+.detail-block:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+
+
+/* NAVBAR STYLE */
+
+#navbar-container {
+  width: 100%;
+}
+
+#navbar-container .top-nav {
+  width: 100%;
+  height: 60px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 40px;
+
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* BRAND */
+
+#navbar-container .brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#navbar-container .brand-name {
+  font-weight: 600;
+  font-size: 18px;
+  color: #1e3a8a;
+}
+
+/* NAV LINKS */
+
+#navbar-container .nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+#navbar-container .nav-links a {
+  text-decoration: none;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#navbar-container .nav-links a:hover {
+  color: #2563eb;
+}

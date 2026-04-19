@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Manage Career Domains</title>
+
+<style>
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+td,th{
+border:1px solid #ddd;
+padding:10px;
+}
+
+button{
+margin:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Manage Career Domains</h2>
+
+<button onclick="addDomain()">Add Domain</button>
+
+<table id="domainTable">
+
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Actions</th>
+</tr>
+
+</table>
+
+<script>
+
+async function loadDomains(){
+
+const res = await fetch("http://localhost:5000/api/admin/domains")
+const domains = await res.json()
+
+const table = document.getElementById("domainTable")
+
+domains.forEach(d=>{
+
+const row = document.createElement("tr")
+
+row.innerHTML = `
+<td>${d.name}</td>
+<td>${d.description}</td>
+
+<td>
+<button onclick="editDomain('${d._id}')">Edit</button>
+<button onclick="deleteDomain('${d._id}')">Delete</button>
+</td>
+`
+
+table.appendChild(row)
+
+})
+
+}
+
+function addDomain(){
+
+const name = prompt("Domain name")
+const description = prompt("Description")
+
+fetch("http://localhost:5000/api/admin/addDomain",{
+
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({name,description})
+
+}).then(()=>location.reload())
+
+}
+
+function editDomain(id){
+
+const name = prompt("New domain name")
+
+fetch("http://localhost:5000/api/admin/editDomain/"+id,{
+
+method:"PUT",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({name})
+
+}).then(()=>location.reload())
+
+}
+
+function deleteDomain(id){
+
+fetch("http://localhost:5000/api/admin/deleteDomain/"+id,{
+method:"DELETE"
+}).then(()=>location.reload())
+
+}
+
+loadDomains()
+
+</script>
+
+</body>
+</html>

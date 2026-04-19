@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Dashboard</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6fb;
+padding:40px;
+}
+
+h1{
+text-align:center;
+margin-bottom:40px;
+}
+
+/* Center 3 cards nicely */
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+max-width:900px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+text-align:center;
+transition:0.2s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+button{
+margin-top:15px;
+padding:10px 18px;
+border:none;
+background:#3b82f6;
+color:white;
+cursor:pointer;
+border-radius:6px;
+font-size:14px;
+}
+
+button:hover{
+background:#2563eb;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Admin Control Panel</h1>
+
+<div class="grid">
+
+<div class="card">
+<h3>Manage Users</h3>
+<p>View and control registered users</p>
+<button onclick="goUsers()">Open</button>
+</div>
+
+<div class="card">
+<h3>Manage Aptitude Questions</h3>
+<p>Add or update aptitude test questions</p>
+<button onclick="goQuestions()">Open</button>
+</div>
+
+<div class="card">
+<h3>View User Feedback</h3>
+<p>See feedback submitted by users</p>
+<button onclick="goFeedback()">Open</button>
+</div>
+
+</div>
+
+<script>
+
+function goUsers(){
+window.location="admin-users.html"
+}
+
+function goQuestions(){
+window.location="admin-aptitude.html"
+}
+
+function goFeedback(){
+window.location="admin-feedback.html"
+}
+
+</script>
+
+</body>
+</html>

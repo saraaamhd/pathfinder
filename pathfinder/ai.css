@@ -1,0 +1,154 @@
+/* ===== BASIC RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #0a3d62;
+}
+
+/* ===== PAGE WRAPPER ===== */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+padding-top: 60px;
+
+  gap: 30px;
+}
+
+/* ===== 3D SCENE ===== */
+.scene {
+  width: 320px;
+  height: 320px;
+  perspective: 1000px; /* THIS creates depth */
+}
+
+/* ===== THE CUBE ===== */
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  transform-style: preserve-3d;
+ transform: rotateX(-20deg) rotateY(30deg);
+
+  transition: transform 0.8s ease-in-out;
+}
+
+/* ===== COMMON FACE STYLES ===== */
+.face {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  padding: 20px;
+  border-radius: 16px;
+}
+
+/* ===== FRONT FACE (TITLE) ===== */
+.face.front {
+  background: #0a3d62;
+  color: #ffffff;
+  transform: translateZ(160px);
+}
+
+.face.front h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+/* ===== TOP FACE (CORE AREAS) ===== */
+.face.top {
+  background: #c7ddff;
+  transform: rotateX(90deg) translateZ(160px);
+}
+
+.face.top ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.face.top li {
+  margin: 6px 0;
+}
+
+/* ===== LEFT FACE (WHAT IS SD) ===== */
+.face.left {
+  background: #c7ddff;
+  transform: rotateY(-90deg) translateZ(160px);
+}
+
+/* ===== RIGHT FACE (SKILLS) ===== */
+.face.right {
+  background: #c7ddff;
+  transform: rotateY(90deg) translateZ(160px);
+}
+
+.face.right ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.face.right li {
+  margin: 6px 0;
+}
+
+/* ===== BOTTOM FACE (WHO IS THIS FOR) ===== */
+.face.bottom {
+  background: #0a3d62;
+  color: #ffffff;
+  transform: rotateX(-90deg) translateZ(160px);
+}
+
+/* ===== CONTROLS ===== */
+.cube-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 100px; 
+}
+
+.cube-controls button {
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: #c7ddff;
+  color: #0a3d62;
+  font-weight: 600;
+}
+
+
+.learn-more {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.learn-more a {
+  display: inline-block;
+  padding: 12px 26px;
+  background: #0a3d62;   /* dark navy */
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.learn-more a:hover {
+  background: #08304d;
+}

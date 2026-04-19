@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Demo Tasks | Pathfinder</title>
+
+<link rel="stylesheet" href="demo-tasks.css">
+
+</head>
+
+
+<body>
+
+<h1>Choose a Domain</h1>
+
+<div class="domains-container">
+
+<div class="domain-card" onclick="openTask('software')">
+Software Development
+</div>
+
+<div class="domain-card" onclick="openTask('cyber')">
+Cybersecurity
+</div>
+
+<div class="domain-card" onclick="openTask('cloud')">
+Cloud Computing
+</div>
+
+<div class="domain-card" onclick="openTask('data')">
+Data and Analytics
+</div>
+
+<div class="domain-card" onclick="openTask('ai')">
+Artificial Intelligence
+</div>
+
+<div class="domain-card" onclick="openTask('iot')">
+Internet of Things (IoT)
+</div>
+
+</div>
+
+
+<script>
+
+function openTask(domain){
+
+if(domain === "software"){
+window.location.href = "tasks-software.html";
+}
+
+if(domain === "cyber"){
+window.location.href = "tasks-cyber.html";
+}
+
+if(domain === "cloud"){
+window.location.href = "tasks-cloud.html";
+}
+
+if(domain === "data"){
+window.location.href = "tasks-data.html";
+}
+
+if(domain === "ai"){
+window.location.href = "tasks-ai.html";
+}
+
+if(domain === "iot"){
+window.location.href = "tasks-iot.html";
+}
+
+}
+
+</script>
+
+</body>
+</html>

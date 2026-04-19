@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Login</title>
+
+<style>
+body{
+font-family:Arial;
+background:#0f172a;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:10px;
+width:300px;
+text-align:center;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:10px 0;
+}
+
+button{
+padding:10px;
+width:100%;
+background:#3b82f6;
+border:none;
+color:white;
+cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>Admin Login</h2>
+
+<input id="username" placeholder="Username">
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+</div>
+
+<script>
+
+function login(){
+
+const user=document.getElementById("username").value
+const pass=document.getElementById("password").value
+
+if(user==="admin" && pass==="admin123"){
+
+localStorage.setItem("admin","true")
+window.location.href="admin-dashboard.html"
+
+}else{
+
+alert("Invalid Admin Login")
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

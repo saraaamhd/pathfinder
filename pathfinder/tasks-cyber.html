@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SOC Investigation Lab | Pathfinder</title>
+<link rel="stylesheet" href="tasks-cyber.css">
+</head>
+
+<body>
+
+<!-- MISSION MODAL -->
+
+<div id="missionModal" class="modal">
+<div class="modal-box">
+
+<h2>🚨 SOC Incident Investigation</h2>
+
+<p>
+You are a <b>Junior Security Analyst</b>.
+
+The monitoring system detected suspicious login activity
+on the SecureBank authentication server.
+
+Investigate the logs and determine if an attack occurred.
+</p>
+
+<h3>Select Difficulty</h3>
+
+<div class="difficulty-buttons">
+<button id="beginnerBtn">Beginner</button>
+<button id="intermediateBtn">Intermediate</button>
+<button id="advancedBtn">Advanced</button>
+</div>
+
+</div>
+</div>
+
+
+<!-- DASHBOARD -->
+
+<div class="dashboard">
+
+<!-- LEFT PANEL -->
+
+<div class="panel mission">
+
+<h3>Mission Panel</h3>
+
+<div id="instructions">
+<p>Select a difficulty to start investigation.</p>
+</div>
+
+<div class="step-controls">
+<button id="prevStep">Previous</button>
+<button id="nextStep">Next</button>
+</div>
+
+</div>
+
+
+<!-- CENTER PANEL -->
+
+<div class="panel logs">
+
+<h3>Authentication Logs</h3>
+
+<table id="logTable">
+<thead>
+<tr>
+<th>Timestamp</th>
+<th>User</th>
+<th>IP</th>
+<th>Status</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr><td>10:02:11</td><td>sara</td><td>192.168.1.4</td><td>Success</td></tr>
+<tr><td>10:02:15</td><td>sara</td><td>185.34.21.90</td><td>Failed</td></tr>
+<tr><td>10:02:16</td><td>sara</td><td>185.34.21.90</td><td>Failed</td></tr>
+<tr><td>10:02:17</td><td>sara</td><td>185.34.21.90</td><td>Failed</td></tr>
+<tr><td>10:02:18</td><td>sara</td><td>185.34.21.90</td><td>Failed</td></tr>
+<tr><td>10:02:19</td><td>sara</td><td>185.34.21.90</td><td>Failed</td></tr>
+
+</tbody>
+</table>
+
+</div>
+
+
+<!-- RIGHT PANEL -->
+
+<div class="panel tools">
+
+<h3>SIEM Query Console</h3>
+
+<input id="queryInput" placeholder="search ip=185.34.21.90">
+
+<button onclick="runQuery()">Run Query</button>
+
+<div class="answer-box">
+
+<h4>Report Attack Type</h4>
+
+<input id="answerInput" placeholder="Enter attack type">
+
+<button onclick="submitAnswer()">Submit</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ALERT PANEL -->
+
+<div class="alerts">
+
+<h3>🚨 Security Alerts</h3>
+
+<div id="alertFeed"></div>
+
+</div>
+
+
+<!-- TERMINAL -->
+
+<div class="terminal">
+
+<h3>Investigation Terminal</h3>
+
+<pre id="terminalOutput">> waiting for investigation...</pre>
+
+</div>
+
+
+<script src="tasks-cyber.js"></script>
+
+</body>
+</html>

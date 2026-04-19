@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Pathfinder Readiness Score</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#0f172a;
+color:white;
+padding:40px;
+text-align:center;
+}
+
+.container{
+width:500px;
+margin:auto;
+background:#1e293b;
+padding:30px;
+border-radius:15px;
+}
+
+.progress-container{
+width:100%;
+height:30px;
+background:#334155;
+border-radius:20px;
+overflow:hidden;
+margin-top:20px;
+}
+
+.progress-bar{
+height:100%;
+width:0%;
+background:#6366f1;
+transition:1s;
+}
+
+.status-box{
+margin-top:30px;
+text-align:left;
+}
+
+.status{
+margin:10px 0;
+}
+
+.completed{
+color:#22c55e;
+}
+
+.pending{
+color:#facc15;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Career Readiness Score</h2>
+
+<div class="progress-container">
+<div id="progressBar" class="progress-bar"></div>
+</div>
+
+<h3 id="scoreText">Loading...</h3>
+
+<div class="status-box">
+
+<p class="status" id="aptitudeStatus">Aptitude Test: Checking...</p>
+
+<p class="status" id="demoStatus">Demo Tasks: Checking...</p>
+
+<p class="status" id="exploreStatus">Career Exploration: Checking...</p>
+
+</div>
+
+</div>
+
+<script>
+
+async function loadReadiness(){
+
+try{
+
+const userId = localStorage.getItem("userId") || "demoUser";
+
+const response = await fetch(
+`http://localhost:5000/api/readiness/score/${userId}`
+);
+
+const data = await response.json();
+
+const score = data.readinessScore;
+
+document.getElementById("progressBar").style.width = score + "%";
+
+document.getElementById("scoreText").innerText =
+"Your Readiness Score: " + score + "%";
+
+if(score >= 50){
+document.getElementById("aptitudeStatus").innerHTML =
+"Aptitude Test: <span class='completed'>Completed ✔</span>";
+}
+
+if(score >= 70){
+document.getElementById("demoStatus").innerHTML =
+"Demo Tasks: <span class='completed'>Completed ✔</span>";
+}
+
+if(score >= 90){
+document.getElementById("exploreStatus").innerHTML =
+"Career Exploration: <span class='completed'>Completed ✔</span>";
+}
+
+}catch(error){
+
+console.error(error);
+
+document.getElementById("scoreText").innerText =
+"Unable to load readiness score";
+
+}
+
+}
+
+loadReadiness();
+
+</script>
+
+</body>
+</html>
