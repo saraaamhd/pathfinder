@@ -8,6 +8,7 @@ PathFinder is a full-stack web application that helps users explore career paths
 - Aptitude-based question system
 - Career path recommendations
 - Structured domain exploration
+- Demo tasks for user to experience selected domains
 
 ### Tech Stack
 
