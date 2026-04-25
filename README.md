@@ -1,46 +1,29 @@
-# 🚀 PathFinder
+## PathFinder
 
-PathFinder is a web-based career guidance platform designed to help users explore different career paths based on their interests and abilities.
+PathFinder is a full-stack web application that helps users explore career paths based on their interests and aptitude.
 
----
+### Features
 
-## 🌟 Overview
+- User authentication (login and signup)
+- Aptitude-based question system
+- Career path recommendations
+- Structured domain exploration
 
-Choosing the right career can be confusing. PathFinder simplifies this process by providing structured guidance, helping users understand various domains and make informed decisions.
+### Tech Stack
 
----
+- Frontend: HTML, CSS, JavaScript
+- Backend: Node.js, Express.js
+- Database: MongoDB Atlas
+- Deployment: AWS (EC2, S3, CloudFront)
 
-## ✨ Key Features
+### Architecture
 
-- 🎯 Career path exploration  
-- 🧠 Interest-based guidance  
-- 📊 Structured information about domains  
-- 🧪 Interactive learning approach (demo tasks)
+Frontend (CloudFront) -> API (/api) -> Backend (EC2) -> MongoDB Atlas
 
----
+### Status
 
-## 🛠️ Tech Stack
+Core features implemented and deployed. Further improvements in progress.
 
-- **Frontend:** HTML, CSS, JavaScript  
-- **Backend:** Node.js  
-- **Database:** MongoDB  
+### Author
 
----
-
-## 📁 Project Structure
-
-- `pathfinder/` → Frontend  
-- `backend/` → Server & database logic  
-
----
-
-## 🚧 Status
-
-This project is currently under deployment and will be improved with more features and better user experience.
-
----
-
-## 👩‍💻 Author
-
-Sara  
-Aspiring Cloud & Cybersecurity Engineer ☁️🔐
+Sara Mohammed
